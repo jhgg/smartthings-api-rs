@@ -1,12 +1,7 @@
-WIP: Rust API for smart things.
-
-
-### Example
-
-Turn on all the freaking lights...
-
-```rust
-use smartthings_api::{Client, Result, CommandBatch, capabilities::{Switch, switch::SwitchValue}};
+use smartthings_api::{
+    capabilities::{switch::SwitchValue, Switch},
+    Client, CommandBatch, Result,
+};
 
 #[tokio::main]
 async fn main() -> Result<()> {
@@ -24,4 +19,3 @@ async fn main() -> Result<()> {
     batch.execute().await?;
     Ok(())
 }
-```
